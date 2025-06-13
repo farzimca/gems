@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Gemstone Classifier</title>
+</head>
+<body>
+    <h2>Upload an Image to Predict Gemstone Type</h2>
+    <form method="POST" action="/predict" enctype="multipart/form-data">
+        <input type="file" name="file" accept="image/*" required>
+        <input type="submit" value="Predict">
+    </form>
+
+    {% if prediction_text %}
+        <h3>{{ prediction_text }}</h3>
+    {% endif %}
+
+    {% if image_path %}
+        <img src="{{ image_path }}" width="300">
+    {% endif %}
+</body>
+</html>
