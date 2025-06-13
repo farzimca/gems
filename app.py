@@ -125,3 +125,9 @@ if __name__ == '__main__':
     # Ensure the upload folder exists
     os.makedirs(UPLOAD_FOLDER, exist_ok=True)
     app.run(debug=True)
+    import os
+
+if __name__ == "__main__":
+    port = int(os.environ.get("PORT", 5000))
+    app.run(host="0.0.0.0", port=port)
+
